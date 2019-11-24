@@ -1,3 +1,11 @@
+https://medium.com/techspace-usict/how-to-create-interactive-maps-in-react-js-ccdfad460fa0
+https://github.com/uber/react-map-gl/tree/master/docs
+https://uber.github.io/react-map-gl/#/Documentation/getting-started/adding-custom-data
+https://account.mapbox.com/
+https://www.freecodecamp.org/news/wordpress-react-how-to-create-a-modern-web-app-using-wordpress-ef6cc6be0cd0/
+https://developer.wordpress.org/rest-api/
+https://lightsandclockwork.xyz/wp-json
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
