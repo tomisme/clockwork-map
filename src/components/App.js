@@ -15,6 +15,11 @@ const WA_FRAME = {
   zoom: 4.5
 };
 
+async function getPoints(){
+  const response = await fetch('http://localhost:3001/api/points');
+  return await response.json();
+}
+
 class App extends Component {
   constructor() {
     super();
@@ -24,6 +29,12 @@ class App extends Component {
         ...WA_FRAME
       }
     };
+  }
+
+  componentDidMount() {
+    getPoints().then(points => {
+      this.setState({points});
+    })
   }
 
   goToWA = () => {
@@ -45,9 +56,15 @@ class App extends Component {
           }
           onViewportChange={this.onUserViewportChange.bind(this)}
         >
-          <Marker latitude={-25} longitude={120}>
-            <img src={mapMarkerSrc} width={40} />
-          </Marker>
+          {this.state.points && this.state.points.map((point, i) => (
+            <Marker
+              key={i}
+              longitude={point.longitude}
+              latitude={point.latitude}
+            >
+              <img src={mapMarkerSrc} width={40} />
+            </Marker>
+          ))}
         </ReactMapGL>
         <button onClick={this.goToWA.bind(this)}>Back to WA</button>
       </div>
